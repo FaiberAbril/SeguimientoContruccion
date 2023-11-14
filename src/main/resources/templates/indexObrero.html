@@ -274,63 +274,78 @@
 							</div>
 							<div class="card-body px-0 pt-0 pb-2">
 								<div class="table-responsive p-0">
-									<table class="table align-items-center mb-0">
+									<table class="table align-items-center mb-0 pl-0">
 										<thead>
 											<tr>
 												<th
-													class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Id</th>
 												<th
-													class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Nombre</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Apellido</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Tipo_Doc</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Documento</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Tipo_San</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Telefono</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Email</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Nacimiento</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Direccion</th>
-
-												<th class="text-secondary opacity-7"></th>
+												<th
+													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Eliminar</th>
+												<th
+													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Actualizar</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr th:each="Obrero : ${listaObreros}">
-												<td th:text="${Obrero.idObrero}"></td>
-												<td th:text="${Obrero.Nombre}"></td>
-												<td th:text="${Obrero.Apellido}"></td>
-												<td th:text="${Obrero.TipoDoc}"></td>
-												<td th:text="${Obrero.Documento}"></td>
-												<td th:text="${Obrero.TipoSan}"></td>
-												<td th:text="${Obrero.Telefono}"></td>
-												<td th:text="${Obrero.Email}"></td>
-												<td th:text="${Obrero.Fecha_nac}"></td>
-												<td th:text="${Obrero.Direccion}"></td>
+												<td th:text="${Obrero.idObrero}"
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.Nombre}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.Apellido}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.TipoDoc}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.Documento}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.TipoSan}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.Telefono}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.Email}" class="text-xs text-secondary "></td>
+												<td th:text="${Obrero.Fecha_nac}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Obrero.Direccion}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td>
 													<a th:href="@{/Obrero/EliminarObrero/{idObrero}(idObrero=${Obrero.idObrero})}"
-														class="btn btn-link text-danger text-gradient px-3 mb-0"
+														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
 														href="javascript:;">
 														<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
 													</a>
-
-													<a class="btn btn-link text-danger text-gradient px-3 mb-0"
+												</td>
+												<td>
+													<a th:href="@{/Obrero/ActualizarObrero/{idObrero}(idObrero=${Obrero.idObrero})}"
+														class="btn btn-link text-center text-danger text-gradient px-3 mb-0"
 														href="javascript:;">
 														<span
 															class="material-symbols-outlined btn btn-link text-danger text-gradient px-0 mb-0 me-0 mb-0 mt-0">
@@ -338,6 +353,7 @@
 														</span>
 														<i class="text-dark me-0" aria-hidden="true"></i>Actualizar
 													</a>
+												</td>
 											</tr>
 										</tbody>
 									</table>
@@ -387,6 +403,7 @@
 					</div>
 				</footer>
 			</div>
+		</div>
 	</main>
 	<div class="fixed-plugin">
 		<a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
