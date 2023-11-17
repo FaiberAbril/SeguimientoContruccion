@@ -30,13 +30,11 @@
 		class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
 		id="sidenav-main">
 		<div class="sidenav-header">
-			<i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-				aria-hidden="true" id="iconSidenav"></i>
-			<a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
-				target="_blank">
-				<img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-				<span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
+			<a class="navbar-brand m-2 cursor-pointer" style="height: 150px;">
+				<img th:src="@{/img/BuildSERY.png}" class="navbar-brand-imgs" style="height: 100%; width: 40%;">
+				<span class="ms-1 font-weight-bold">BuildSERY</span>
 			</a>
+
 		</div>
 		<hr class="horizontal dark mt-0">
 		<div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
@@ -45,61 +43,54 @@
 					<a class="nav-link " th:href="@{/PaginaInicio/Inicio}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+							<img th:src="@{/img/icons8-casa-32.png}" style="height: 22px; width: 22px;">
 						</div>
-						<span class="nav-link-text ms-1">INICIO</span>
+						<span class="nav-link-text ms-1">Inicio</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " th:href="@{/Obra/indexObra}">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<img th:src="@{/img/icons8-construcción-64.png}" style="height: 25px; width: 25px;">
+						</div>
+						<span class="nav-link-text ms-1">Obras</span>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link " th:href="@{/Obrero/indexObrero}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+							<img th:src="@{/img/icons8-obrero-48 (1).png}" style="height: 25px; width: 25px;">
 						</div>
-						<span class="nav-link-text ms-1">OBREROS</span>
+						<span class="nav-link-text ms-1">Obreros</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="../pages/billing.html">
+					<a class="nav-link " th:href="@{/Material/indexMaterial}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+							<img th:src="@{/img/icons8-mantenimiento-48.png}" style="height: 25px; width: 25px;">
 						</div>
-						<span class="nav-link-text ms-1">Billing</span>
+						<span class="nav-link-text ms-1">Materiales</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link " href="../pages/virtual-reality.html">
-						<div
-							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<i class="ni ni-app text-info text-sm opacity-10"></i>
-						</div>
-						<span class="nav-link-text ms-1">Virtual Reality</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " href="../pages/rtl.html">
-						<div
-							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-						</div>
-						<span class="nav-link-text ms-1">RTL</span>
-					</a>
-				</li>
+				<br>
+				<br>
 				<li class="nav-item mt-3">
 					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="../pages/profile.html">
+					<a class="nav-link " href="./pages/profile.html">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
 						</div>
-						<span class="nav-link-text ms-1">Profile</span>
+						<span class="nav-link-text ms-1">Perfiles</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="../pages/sign-in.html">
+					<a class="nav-link " href="./pages/sign-in.html">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -108,7 +99,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="../pages/sign-up.html">
+					<a class="nav-link " href="./pages/sign-up.html">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="ni ni-collection text-info text-sm opacity-10"></i>
@@ -120,7 +111,7 @@
 		</div>
 		<div class="sidenav-footer mx-3 ">
 			<div class="card card-plain shadow-none" id="sidenavCard">
-				<img class="w-50 mx-auto" src="../assets/img/illustrations/icon-documentation.svg"
+				<img class="w-50 mx-auto" src="./assets/img/illustrations/icon-documentation.svg"
 					alt="sidebar_illustration">
 				<div class="card-body text-center p-3 w-100 pt-0">
 					<div class="docs-info">
@@ -292,7 +283,7 @@
 		</div>
 
 		<div class="container-fluid py-4">
-        <form id="obreroForm" th:object="${ObjObreros}" th:action="@{/Obrero/GuardarObrero}" method="post">
+			<form id="obreroForm" th:object="${ObjObreros}" th:action="@{/Obrero/GuardarObrero}" method="post">
 
 				<div class="row">
 					<div class="col-md-8">
@@ -302,14 +293,14 @@
 									<div class="col-6 d-flex align-items-center">
 										<p class="text-uppercase text-sm">DATOS</p>
 									</div>
-									
+
 									<div class="col-6 text-end">
 										<a th:href="@{/Obreros/indexObrero}">
 											<button class="btn btn-primary btn-sm ms-auto">volver</button>
-										</a>	
+										</a>
 									</div>
 								</div>
-							     <div class="row">
+								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="Nombre" class="form-label">Nombre:</label>
@@ -393,7 +384,7 @@
 									</div>
 									<div class="d-flex justify-content-between">
 										<a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block"
-											type="submit"  onclick="limpiarFormulario()">Guardar</a>
+											type="submit" onclick="limpiarFormulario()">Guardar</a>
 									</div>
 
 								</div>
@@ -543,12 +534,12 @@
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 	<script th:src="@{/js/argon-dashboard.min.js?v=2.0.4}"></script>
-	<!-- Agrega este script al final de tu archivo HTML justo antes del cierre del cuerpo </body> --> 
+	<!-- Agrega este script al final de tu archivo HTML justo antes del cierre del cuerpo </body> -->
 	<script>
-        function limpiarFormulario() {
-            document.getElementById('obreroForm').reset();
-        }
-    </script>
+		function limpiarFormulario() {
+			document.getElementById('obreroForm').reset();
+		}
+	</script>
 
 </body>
 
