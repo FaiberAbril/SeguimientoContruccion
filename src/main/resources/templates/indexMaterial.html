@@ -21,6 +21,12 @@
 	<link id="pagestyle" th:href="@{/css/argon-dashboard.css?v=2.0.4}" rel="stylesheet" />
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<script type="text/javascript">
+			if (performance.navigation.type == 1) {
+				// Si la página se recargó, redirige a la página de inicio
+				window.location.href = "http://localhost:8080/PaginaInicio/Inicio";
+			}
+		</script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -135,9 +141,9 @@
 					<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
 						<li class="breadcrumb-item text-sm"><a class="opacity-5 text-white"
 								href="javascript:;">Pages</a></li>
-						<li class="breadcrumb-item text-sm text-white active" aria-current="page">Obreros</li>
+						<li class="breadcrumb-item text-sm text-white active" aria-current="page">Materiales</li>
 					</ol>
-					<h6 class="font-weight-bolder text-white mb-0">Obreros</h6>
+					<h6 class="font-weight-bolder text-white mb-0">Materiales</h6>
 				</nav>
 				<ul class="navbar-nav  justify-content-end">
 					<li class="nav-item d-flex align-items-center">
@@ -258,7 +264,7 @@
 									<h6 class="mb-0">LISTA MATERIALES</h6>
 								</div>
 								<div class="col-6 text-end">
-									<a th:href="@{/Obrero/ObreroIngreso}" class="btn bg-gradient-dark mb-0"
+									<a th:href="@{/Material/MaterialIngreso}" class="btn bg-gradient-dark mb-0"
 										href="javascript:;"><i class="fas fa-plus"
 											aria-hidden="true"></i>&nbsp;&nbsp;Agregar</a>
 								</div>
@@ -276,7 +282,7 @@
 													Nombre</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													cantidad</th>
+													Cantidad</th>
 												<th
 													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Eliminar</th>
@@ -289,23 +295,11 @@
 											<tr th:each="Material : ${listaMaterial}">
 												<td th:text="${Material.idMaterial}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.Nombre}"
+												<td th:text="${Material.NombreMat}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.Apellido}"
+												<td th:text="${Material.cantidad}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.TipoDoc}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.Documento}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.TipoSan}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.Telefono}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.Email}" class="text-xs text-secondary "></td>
-												<td th:text="${Material.Fecha_nac}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Material.Direccion}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
+												
 												<td>
 													<a th:href="@{/Material/EliminarMaterial/{idMaterial}(idMaterial=${Material.idMaterial})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"

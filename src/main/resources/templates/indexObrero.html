@@ -21,6 +21,12 @@
 	<link id="pagestyle" th:href="@{/css/argon-dashboard.css?v=2.0.4}" rel="stylesheet" />
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<script type="text/javascript">
+			if (performance.navigation.type == 1) {
+				// Si la página se recargó, redirige a la página de inicio
+				window.location.href = "http://localhost:8080/PaginaInicio/Inicio";
+			}
+		</script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">

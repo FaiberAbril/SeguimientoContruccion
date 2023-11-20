@@ -277,10 +277,10 @@
                     <div class="col-auto my-auto">
                         <div class="h-100">
                             <h5 class="mb-1">
-                                ACTUALIZAR OBREROS
+                                ACTUALIZAR OBRA
                             </h5>
                             <p class="mb-0 font-weight-bold text-sm">
-                                Obreros
+                                Obras
                             </p>
                         </div>
                     </div>
@@ -289,7 +289,7 @@
         </div>
 
         <div class="container-fluid py-4">
-            <form th:object="${ObjObreros}" th:action="@{/Obrero/ActualizarObrero}" method="post">
+            <form th:object="${ObjObras}" th:action="@{/Obra/ActualizarObra}" method="post">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
@@ -300,7 +300,7 @@
                                     </div>
 
                                     <div class="col-6 text-end">
-                                        <a th:href="@{/Obreros/indexObrero}">
+                                        <a th:href="@{/Obra/indexObra}">
                                             <button class="btn btn-primary btn-sm ms-auto">volver</button>
                                         </a>
                                     </div>
@@ -308,91 +308,48 @@
                                 <div class="row">
                                     <div>
                                         <div class="form-group">
-                                            <input type="hidden" class="form-control" th:field="*{idObrero}"
-                                                id="idObrero" name="idObrero" required>
+                                            <input type="hidden" class="form-control" th:field="*{idObra}"
+                                                id="idObra" name="idObra" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="Nombre" class="form-label">Nombre:</label>
-                                            <input type="text" class="form-control" th:field="*{Nombre}" id="Nombre"
-                                                name="Nombre" required>
+                                            <label for="NombreObra" class="form-label">Nombre:</label>
+                                            <input type="text" class="form-control" th:field="*{NombreObra}" id="NombreObra"
+                                                name="NombreObra" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="Apellido" class="form-label">Apellidos:</label>
-                                            <input type="text" class="form-control" th:field="*{Apellido}" id="Apellido"
-                                                name="Apellido" required>
+                                            <label for="Descripcion" class="form-label">Descripcion:</label>
+                                            <input type="text" class="form-control" th:field="*{Descripcion}" id="Descripcion"
+                                                name="Descripcion" required>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="TipoDoc" class="form-label">Tipo_Doc:</label>
-                                            <select class="form-select" th:field="*{TipoDoc}" id="TipoDoc"
-                                                name="TipoDoc" required>
-                                                <option value="DNI">D.N.I</option>
-                                                <option value="Pasaporte">P.A</option>
-                                                <option value="Cedula">C.C</option>
-                                                <option value="Tarjeta_identidad">T.I</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="Documento" class="form-label">Documento:</label>
-                                            <input type="text" class="form-control" th:field="*{Documento}"
-                                                id="Documento" name="Documento" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="Email" class="form-label">Email: </label>
-                                            <input type="text" class="form-control" th:field="*{Email}" id="Email"
-                                                name="Email" required>
-                                        </div>
-                                    </div>
+                                    </div> <div class="col-md-4">
+										<div class="form-group">
+											<label for="FechaInicio" class="form-label">Fecha_Inicio</label>
+											<input type="date" class="form-control" th:field="*{FechaInicio}"
+												id="FechaInicio" name="FechaInicio" required>
+										</div>
+									</div>
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="Telefono" class="form-label">Telefono:</label>
-                                            <input type="text" class="form-control" th:field="*{Telefono}" id="Telefono"
-                                                name="Telefono" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="TipoSan" class="form-label">Tipo_San:</label>
-                                            <select class="form-select" th:field="*{TipoSan}" id="TipoSan"
-                                                name="TipoSan" required>
-                                                <option value="A_POSITIVO">A+</option>
-                                                <option value="A_NEGATIVO">A-</option>
-                                                <option value="B_POSITIVO">B+</option>
-                                                <option value="B_NEGATIVO">B-</option>
-                                                <option value="O_POSITIVO">O+</option>
-                                                <option value="O_NEGATIVO">O-</option>
-                                                <option value="AB_POSITIVO">AB+</option>
-                                                <option value="AB_NEGATIVO">AB-</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="Fecha_nac" class="form-label">Nacimiento</label>
-                                            <input type="date" class="form-control" th:field="*{Fecha_nac}"
-                                                id="Fecha_nac" name="Fecha_nac" required>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="Direccion" class="form-label">Direccion</label>
-                                                <input type="text" class="form-control" th:field="*{Direccion}"
-                                                    id="Direccion" name="Direccion" required>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
+										<div class="form-group">
+											<label for="FechaFinal" class="form-label">Fecha_Final</label>
+											<input type="date" class="form-control" th:field="*{FechaFinal}"
+												id="FechaFinal" name="FechaFinal" required>
+										</div>
+									</div>
+                                    <div class="col-md-6">
+										<div class="form-group">
+											<label for="estado" class="form-label">Estado:</label>
+											<select class="form-select" th:field="*{estado}" id="estado"
+												name="estado" required>
+												<option value="En_progreso"></option>
+												<option value="Completado"></option>
+											</select>
+										</div>
+									</div>
+                                  
                                     <div class="d-flex justify-content-between">
                                         <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block"
                                             type="submit">Guardar</a>
