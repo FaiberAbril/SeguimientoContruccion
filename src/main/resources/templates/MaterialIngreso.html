@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="utf-8" />
@@ -25,6 +25,7 @@
 			window.location.href = "http://localhost:8080/PaginaInicio/Inicio";
 		}
 	</script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -270,8 +271,7 @@
 				<div class="row gx-4">
 					<div class="col-auto">
 						<div class="avatar avatar-xl position-relative">
-							<img th:src="@{/img/BuildSERY.png}"
-								class="w-100 border-radius-lg shadow-sm">
+							<img th:src="@{/img/BuildSERY.png}" class="w-100 border-radius-lg shadow-sm">
 						</div>
 					</div>
 					<div class="col-auto my-auto">
@@ -310,8 +310,8 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="NombreMat" class="form-label">Nombre:</label>
-											<input type="text" class="form-control" th:field="*{NombreMat}" id="NombreMat"
-												name="NombreMat" required>
+											<input type="text" class="form-control" th:field="*{NombreMat}"
+												id="NombreMat" name="NombreMat" required>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -321,16 +321,25 @@
 												name="Cantidad" required>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<label for="Categoria" class="form-label">Categoría:</label>
-												<select class="form-control" th:field="*{Categoria}">
-													<option th:each="categoria : ${categorias}" th:value="${categoria}" th:text="${categoria}"></option>
-												</select>
-											</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="categoria">Categoría:</label>
+											<select id="categoria" name="categoria" th:field="*{categoria}">
+												<option
+													th:each="categoria : ${T(com.sena.Modelos.CategoriaMaterial).values()}"
+													th:value="${categoria}" th:text="${categoria.name()}"></option>
+											</select>
 										</div>
-									
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="tipo">Tipo:</label>
+											<select id="tipo" name="tipo" th:field="*{tipo}">
+												<option th:each="tipo : ${T(com.sena.Modelos.TipoMaterial).values()}"
+													th:value="${tipo}" th:text="${tipo.getNombre()}"></option>
+											</select>
+										</div>
+									</div>
 									<div class="d-flex justify-content-between">
 										<a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block"
 											type="submit" onclick="limpiarFormulario()">Guardar</a>
@@ -485,10 +494,57 @@
 	<script th:src="@{/js/argon-dashboard.min.js?v=2.0.4}"></script>
 	<!-- Agrega este script al final de tu archivo HTML justo antes del cierre del cuerpo </body> -->
 	<script>
+		// Manejar el cambio en la selección de categoría
+		$(document).ready(function () {
+			$('#categoria').change(function () {
+				// Obtener la categoría seleccionada
+				var selectedCategoria = $(this).val();
+
+				// Hacer una solicitud al servidor para obtener los tipos correspondientes
+				$.get('/tiposPorCategoria?categoria=' + selectedCategoria, function (data) {
+					// Limpiar las opciones actuales
+					$('#tipo').empty();
+
+					// Llenar las nuevas opciones
+					$.each(data, function (key, value) {
+						$('#tipo').append('<option value="' + value + '">' + key + '</option>');
+					});
+				});
+			});
+
+			// Trigger change para que se carguen los tipos al cargar la página (si se selecciona una categoría predeterminada)
+			$('#categoria').trigger('change');
+		});
+	</script>
+	<script>
 		function limpiarFormulario() {
 			document.getElementById('MaterialForm').reset();
 		}
 	</script>
+	<!-- Manejar el cambio en la selección de categoría -->
+	<script>
+		$(document).ready(function () {
+			$('#categoria').change(function () {
+				// Obtener la categoría seleccionada
+				var selectedCategoria = $(this).val();
+
+				// Hacer una solicitud al servidor para obtener los tipos correspondientes
+				$.get('/tiposPorCategoria?categoria=' + selectedCategoria, function (data) {
+					// Limpiar las opciones actuales
+					$('#tipo').empty();
+
+					// Llenar las nuevas opciones
+					$.each(data, function (key, value) {
+						$('#tipo').append('<option value="' + value + '">' + key + '</option>');
+					});
+				});
+			});
+
+			// Trigger change para que se carguen los tipos al cargar la página (si se selecciona una categoría predeterminada)
+			$('#categoria').trigger('change');
+		});
+	</script>
+
 
 </body>
 

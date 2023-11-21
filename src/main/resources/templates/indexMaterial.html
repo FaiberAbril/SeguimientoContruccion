@@ -21,12 +21,12 @@
 	<link id="pagestyle" th:href="@{/css/argon-dashboard.css?v=2.0.4}" rel="stylesheet" />
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-		<script type="text/javascript">
-			if (performance.navigation.type == 1) {
-				// Si la página se recargó, redirige a la página de inicio
-				window.location.href = "http://localhost:8080/PaginaInicio/Inicio";
-			}
-		</script>
+	<script type="text/javascript">
+		if (performance.navigation.type == 1) {
+			// Si la página se recargó, redirige a la página de inicio
+			window.location.href = "http://localhost:8080/PaginaInicio/Inicio";
+		}
+	</script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -284,6 +284,12 @@
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Cantidad</th>
 												<th
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Categoria</th>
+												<th
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Tipo</th>
+												<th
 													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Eliminar</th>
 												<th
@@ -299,7 +305,11 @@
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Material.cantidad}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												
+												<td th:text="${Material.categoria.getTipos().get(0).getNombre()}"
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Material.tipo.getNombre()}"
+													class="text-center text-uppercase text-dark text-xs"></td>
+
 												<td>
 													<a th:href="@{/Material/EliminarMaterial/{idMaterial}(idMaterial=${Material.idMaterial})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
