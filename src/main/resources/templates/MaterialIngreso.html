@@ -325,18 +325,15 @@
 										<div class="form-group">
 											<label for="categoria">Categoría:</label>
 											<select id="categoria" name="categoria" th:field="*{categoria}">
-												<option
-													th:each="categoria : ${T(com.sena.Modelos.CategoriaMaterial).values()}"
-													th:value="${categoria}" th:text="${categoria.name()}"></option>
+												<option th:each="categoria : ${categorias}" th:value="${categoria}"
+													th:text="${categoria}"></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="tipo">Tipo:</label>
-											<select id="tipo" name="tipo" th:field="*{tipo}">
-												<option th:each="tipo : ${T(com.sena.Modelos.TipoMaterial).values()}"
-													th:value="${tipo}" th:text="${tipo.getNombre()}"></option>
+											<select id="tipo" name="tipo">
 											</select>
 										</div>
 									</div>
@@ -521,29 +518,33 @@
 			document.getElementById('MaterialForm').reset();
 		}
 	</script>
-	<!-- Manejar el cambio en la selección de categoría -->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		$(document).ready(function () {
+			// Manejar el cambio de la categoría
 			$('#categoria').change(function () {
-				// Obtener la categoría seleccionada
 				var selectedCategoria = $(this).val();
 
-				// Hacer una solicitud al servidor para obtener los tipos correspondientes
-				$.get('/tiposPorCategoria?categoria=' + selectedCategoria, function (data) {
-					// Limpiar las opciones actuales
-					$('#tipo').empty();
-
-					// Llenar las nuevas opciones
-					$.each(data, function (key, value) {
-						$('#tipo').append('<option value="' + value + '">' + key + '</option>');
-					});
+				// Realizar una solicitud AJAX para obtener los tipos asociados a la categoría seleccionada
+				$.ajax({
+					type: 'GET',
+					url: '/Material/tiposPorCategoria',
+					data: { categoria: selectedCategoria },
+					success: function (response) {
+						// Limpiar y actualizar la lista de tipos
+						$('#tipo').empty();
+						$.each(response, function (index, tipo) {
+							$('#tipo').append('<option value="' + tipo + '">' + tipo + '</option>');
+						});
+					},
+					error: function (error) {
+						console.log(error);
+					}
 				});
 			});
-
-			// Trigger change para que se carguen los tipos al cargar la página (si se selecciona una categoría predeterminada)
-			$('#categoria').trigger('change');
 		});
 	</script>
+
 
 
 </body>
