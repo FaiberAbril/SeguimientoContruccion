@@ -83,6 +83,18 @@
 					</a>
 				</li>
 				<br>
+				<li class="nav-item mt-3">
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Diccionario de palabras</h6>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " th:href="@{/Diccionario/indexDiccionario}">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<img th:src="@{/img/icons8-consultar-el-manual-48.png}" style="height: 25px; width: 25px;">
+						</div>
+						<span class="nav-link-text ms-1">Diccionario</span>
+					</a>
+				</li>
 				<br>
 				<li class="nav-item mt-3">
 					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
@@ -289,7 +301,7 @@
 		</div>
 
 		<div class="container-fluid py-4">
-			<form id="MaterialForm" th:object="${ObjMateriales}" th:action="@{/Material/GuardarMaterial}" method="post">
+			<form th:object="${ObjMateriales}" th:action="@{/Material/GuardarMaterial}" method="post">
 
 				<div class="row">
 					<div class="col-md-8">
@@ -323,8 +335,8 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="categoria">Categoría:</label>
-											<select id="categoria" name="categoria" th:field="*{categoria}">
+											<label for="categoria" class="form-label">Categoría:</label>
+											<select id="categoria" name="categoria" th:field="*{categoria}" class="form-select">
 												<option th:each="categoria : ${categorias}" th:value="${categoria}"
 													th:text="${categoria}"></option>
 											</select>
@@ -332,21 +344,25 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="tipo">Tipo:</label>
-											<select id="tipo" name="tipo">
+											<label for="tipo"class="form-label">Tipo:</label>
+											<select id="tipo" name="tipo" class="form-select">
 											</select>
 										</div>
 									</div>
 									<div class="d-flex justify-content-between">
 										<a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block"
-											type="submit" onclick="limpiarFormulario()">Guardar</a>
+											type="submit">Guardar</a>
 									</div>
 
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 			</form>
+			<div class="col-md-4">
+				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif" style="height: 90%; width: 100%;" class="pt-5">
+			  </div>
 			<footer class="footer pt-3  ">
 				<div class="container-fluid">
 					<div class="row align-items-center justify-content-lg-between">
@@ -513,12 +529,7 @@
 			$('#categoria').trigger('change');
 		});
 	</script>
-	<script>
-		function limpiarFormulario() {
-			document.getElementById('MaterialForm').reset();
-		}
-	</script>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	
 	<script>
 		$(document).ready(function () {
 			// Manejar el cambio de la categoría
