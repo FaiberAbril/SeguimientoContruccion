@@ -345,22 +345,17 @@
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Obrero.Direccion}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td>
+												<td class="text-center">
 													<a th:href="@{/Obrero/EliminarObrero/{idObrero}(idObrero=${Obrero.idObrero})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
 														href="javascript:;">
 														<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
 													</a>
 												</td>
-												<td>
-													<a th:href="@{/Obrero/ActualizarObrero/{idObrero}(idObrero=${Obrero.idObrero})}"
-														class="btn btn-link text-center text-danger text-gradient px-3 mb-0"
-														href="javascript:;">
-														<span
-															class="material-symbols-outlined btn btn-link text-danger text-gradient px-0 mb-0 me-0 mb-0 mt-0">
-															update
-														</span>
-														<i class="text-dark me-0" aria-hidden="true"></i>Actualizar
+												<td class="text-center">
+													<a class="btn btn-link text-dark px-3 mb-0" 
+													th:href="@{/Obrero/ActualizarObrero/{idObrero}(idObrero=${Obrero.idObrero})}">
+														<i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Actualizar
 													</a>
 												</td>
 											</tr>
