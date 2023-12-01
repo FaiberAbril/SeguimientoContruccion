@@ -173,9 +173,8 @@
 									aria-hidden="true"></i></span>
 							<input type="text" class="form-control" id="terminoBusqueda" placeholder="Diccionario"
 								onfocus="focused(this)" onfocusout="defocused(this)">
-								<button class="btn btn-primary"
-								th:onclick="|buscarDiccionario()|">Buscar</button>
-							
+							<button class="btn btn-primary" th:onclick="|buscarDiccionario()|">Buscar</button>
+
 						</div>
 					</div>
 					<ul class="navbar-nav justify-content-end">
@@ -324,8 +323,7 @@
 									</div>
 
 									<div class="col-6 text-end">
-										<a th:href="@{/Diccionario/indexDiccionario}">
-											<button class="btn btn-primary btn-sm ms-auto">volver</button>
+										<a th:href="@{/Diccionario/indexDiccionario}"class="btn btn-primary btn-sm ms-auto">volver
 										</a>
 									</div>
 								</div>
@@ -352,10 +350,8 @@
 										</div>
 									</div>
 									<div class="col-md-12 d-flex justify-content-center mt-4">
-										<a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block"
-											type="submit">Guardar</a>
+										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
 									</div>
-
 								</div>
 							</div>
 						</div>
@@ -526,7 +522,7 @@
 			var termino = $("#terminoBusqueda").val();
 			window.location.href = "/BuscarDiccionario?termino=" + termino;
 		}
-	
+
 		// Manejar el evento keydown para activar la búsqueda al presionar Enter
 		$("#terminoBusqueda").keydown(function (event) {
 			if (event.key === "Enter") {
@@ -534,7 +530,7 @@
 			}
 		});
 	</script>
-	
+
 
 	<!-- Github buttons -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>

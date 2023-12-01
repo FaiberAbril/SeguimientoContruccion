@@ -84,7 +84,8 @@
 				</li>
 				<br>
 				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Diccionario de palabras</h6>
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Diccionario de palabras
+					</h6>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link " th:href="@{/Diccionario/indexDiccionario}">
@@ -313,8 +314,7 @@
 									</div>
 
 									<div class="col-6 text-end">
-										<a th:href="@{/Material/indexMaterial}">
-											<button class="btn btn-primary btn-sm ms-auto">volver</button>
+										<a th:href="@{/Material/indexMaterial}" class="btn btn-primary btn-sm ms-auto">volver
 										</a>
 									</div>
 								</div>
@@ -337,7 +337,8 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="categoria" class="form-label">Categoría:</label>
-											<select id="categoria" name="categoria" th:field="*{categoria}" class="form-select">
+											<select id="categoria" name="categoria" th:field="*{categoria}"
+												class="form-select">
 												<option th:each="categoria : ${categorias}" th:value="${categoria}"
 													th:text="${categoria}"></option>
 											</select>
@@ -345,24 +346,23 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="tipo"class="form-label">Tipo:</label>
+											<label for="tipo" class="form-label">Tipo:</label>
 											<select id="tipo" name="tipo" class="form-select">
 											</select>
 										</div>
 									</div>
 									<div class="col-md-12 d-flex justify-content-center mt-4">
-										<a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block"
-										type="submit">Guardar</a>
+										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
 									</div>
-
 								</div>
 							</div>
 						</div>
 					</div>
 			</form>
 			<div class="col-md-5 mt-4">
-				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif" style="height: 100%; width: 100%; border-radius: 40px 40px;">
-			  </div>
+				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif"
+					style="height: 100%; width: 100%; border-radius: 40px 40px;">
+			</div>
 			<footer class="footer pt-3  ">
 				<div class="container-fluid">
 					<div class="row align-items-center justify-content-lg-between">
@@ -529,7 +529,7 @@
 			$('#categoria').trigger('change');
 		});
 	</script>
-	
+
 	<script>
 		$(document).ready(function () {
 			// Manejar el cambio de la categoría
@@ -540,7 +540,7 @@
 				$.ajax({
 					type: 'GET',
 					url: '/Material/tiposPorCategoria',
-					data: { categoria: selectedCategoria },
+					data: {categoria: selectedCategoria},
 					success: function (response) {
 						// Limpiar y actualizar la lista de tipos
 						$('#tipo').empty();
