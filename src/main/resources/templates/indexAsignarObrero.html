@@ -119,9 +119,9 @@
 					<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
 						<li class="breadcrumb-item text-sm"><a class="opacity-5 text-white"
 								href="javascript:;">Pages</a></li>
-						<li class="breadcrumb-item text-sm text-white active" aria-current="page">Obras</li>
+						<li class="breadcrumb-item text-sm text-white active" aria-current="page">Obreros</li>
 					</ol>
-					<h6 class="font-weight-bolder text-white mb-0">Obras</h6>
+					<h6 class="font-weight-bolder text-white mb-0">Obreros</h6>
 				</nav>
 				<ul class="navbar-nav  justify-content-end">
 					<li class="nav-item d-flex align-items-center">
@@ -239,10 +239,10 @@
 						<div class="card-header pb-0">
 							<div class="row">
 								<div class="col-6 d-flex align-items-center">
-									<h6 class="mb-0">LISTA OBRAS</h6>
+									<h6 class="mb-0">LISTA ASIGNACION OBREROS</h6>
 								</div>
 								<div class="col-6 text-end">
-									<a th:href="@{/Obra/ObraIngreso}" class="btn bg-gradient-dark mb-0"
+									<a th:href="@{/AsignarObrero/AsignarObreroIngreso}" class="btn bg-gradient-dark mb-0"
 										href="javascript:;"><i class="fas fa-plus"
 											aria-hidden="true"></i>&nbsp;&nbsp;Agregar</a>
 								</div>
@@ -257,19 +257,10 @@
 													Id</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Nombre</th>
+													Obra</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Descripcion</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Fecha_Inicio</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Fecha_Final</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Estado</th>
+													Obrero</th>
 												<th
 													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Eliminar</th>
@@ -279,22 +270,15 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr th:each="Obra : ${listaObras}">
-												<td th:text="${Obra.idObra}"
+											<tr th:each="AsignarObrero : ${listaAsignarObrero}">
+												<td th:text="${AsignarObrero.idAsignarObrero}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.NombreObra}"
+												<td th:text="${AsignarObrero.obras}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.Descripcion}"
+												<td th:text="${AsignarObrero.obreros}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.FechaInicio}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.FechaFinal}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.estado}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-
 												<td class="text-center">
-													<a th:href="@{/Obra/EliminarObra/{idObra}(idObra=${Obra.idObra})}"
+													<a th:href="@{/AsignarObrero/EliminarAsignarObrero/{idAsignarObrero}(idAsignarObrero=${AsignarObrero.idAsignarObrero})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
 														href="javascript:;">
 														<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
@@ -302,7 +286,7 @@
 												</td>
 												<td class="text-center">
 													<a class="btn btn-link text-dark px-3 mb-0"
-														th:href="@{/Obra/ActualizarObra/{idObra}(idObra=${Obra.idObra})}">
+														th:href="@{/AsignarObrero/ActualizarEliminarAsignarObrero/{idAsignarObrero}(idAsignarObrero=${AsignarObrero.idAsignarObrero})}">
 														<i class="fas fa-pencil-alt text-dark me-2"
 															aria-hidden="true"></i>Actualizar
 													</a>
