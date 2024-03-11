@@ -286,10 +286,10 @@
 					<div class="col-auto my-auto">
 						<div class="h-100">
 							<h5 class="mb-1">
-								ACTUALIZAR OBREROS
+								ACTUALIZAR TECNICO SEGUIMIENTO
 							</h5>
 							<p class="mb-0 font-weight-bold text-sm">
-								Obreros
+								Tecnico
 							</p>
 						</div>
 					</div>
@@ -298,7 +298,8 @@
 		</div>
 
 		<div class="container-fluid py-4">
-			<form th:object="${ObjObreros}" th:action="@{/Obrero/ActualizarObrero}" method="post">
+			<form th:object="${ObjTecnicoSeguimiento}" th:action="@{/TecnicoSeguimiento/ActualizarTecnicoSeguimiento}"
+				method="post">
 				<div class="row">
 					<div class="col-md-8">
 						<div class="card">
@@ -309,7 +310,7 @@
 									</div>
 
 									<div class="col-6 text-end">
-										<a th:href="@{/Obreros/indexObrero}">
+										<a th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}">
 											<button class="btn btn-primary btn-sm ms-auto">volver</button>
 										</a>
 									</div>
@@ -317,29 +318,29 @@
 								<div class="row">
 									<div>
 										<div class="form-group">
-											<input type="hidden" class="form-control" th:field="*{idObrero}"
-												id="idObrero" name="idObrero" required>
+											<input type="hidden" class="form-control" th:field="*{idTecnicoSeguimiento}"
+												id="idTecnicoSeguimiento" name="idTecnicoSeguimiento" required>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="Nombre" class="form-label">Nombre:</label>
-											<input type="text" class="form-control" th:field="*{Nombre}" id="Nombre"
-												name="Nombre" required>
+											<label for="NombreTec" class="form-label">Nombre:</label>
+											<input type="text" class="form-control" th:field="*{NombreTec}"
+												id="NombreTec" name="NombreTec" required>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="Apellido" class="form-label">Apellidos:</label>
-											<input type="text" class="form-control" th:field="*{Apellido}" id="Apellido"
-												name="Apellido" required>
+											<label for="ApellidoTec" class="form-label">Apellidos:</label>
+											<input type="text" class="form-control" th:field="*{ApellidoTec}"
+												id="ApellidoTec" name="ApellidoTec" required>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="TipoDoc" class="form-label">Tipo_Doc:</label>
-											<select class="form-select" th:field="*{TipoDoc}" id="TipoDoc"
-												name="TipoDoc" required>
+											<label for="TipoDocu" class="form-label">Tipo_Doc:</label>
+											<select class="form-select" th:field="*{TipoDocu}" id="TipoDocu"
+												name="TipoDocu" required>
 												<option value="DNI">D.N.I</option>
 												<option value="Pasaporte">P.A</option>
 												<option value="Cedula">C.C</option>
@@ -370,9 +371,9 @@
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="TipoSan" class="form-label">Tipo_San:</label>
-											<select class="form-select" th:field="*{TipoSan}" id="TipoSan"
-												name="TipoSan" required>
+											<label for="TipoSang" class="form-label">Tipo_San:</label>
+											<select class="form-select" th:field="*{TipoSang}" id="TipoSang"
+												name="TipoSang" required>
 												<option value="A_POSITIVO">A+</option>
 												<option value="A_NEGATIVO">A-</option>
 												<option value="B_POSITIVO">B+</option>
