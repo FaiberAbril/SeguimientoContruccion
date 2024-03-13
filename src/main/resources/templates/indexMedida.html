@@ -274,7 +274,7 @@
 									<h6 class="mb-0">LISTA OBRAS</h6>
 								</div>
 								<div class="col-6 text-end">
-									<a th:href="@{/Obra/ObraIngreso}" class="btn bg-gradient-dark mb-0"
+									<a th:href="@{/Medida/MedidaIngreso}" class="btn bg-gradient-dark mb-0"
 										href="javascript:;"><i class="fas fa-plus"
 											aria-hidden="true"></i>&nbsp;&nbsp;Agregar</a>
 								</div>
@@ -291,18 +291,6 @@
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Nombre</th>
 												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Descripcion</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Fecha_Inicio</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Fecha_Final</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Estado</th>
-												<th
 													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Eliminar</th>
 												<th
@@ -311,22 +299,14 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr th:each="Obra : ${listaObras}">
-												<td th:text="${Obra.idObra}"
+											<tr th:each="Medida : ${listaMedidas}">
+												<td th:text="${Medida.idObra}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.NombreObra}"
+												<td th:text="${Medida.Nombre}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.Descripcion}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.FechaInicio}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.FechaFinal}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Obra.estado}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-
-												<td class="text-center">
-													<a th:href="@{/Obra/EliminarObra/{idObra}(idObra=${Obra.idObra})}"
+                                                    
+                                                <td class="text-center">
+													<a th:href="@{/Medida/EliminarMedida/{idMedida}(idMedida=${Medida.idMedida})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
 														href="javascript:;">
 														<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
@@ -334,7 +314,7 @@
 												</td>
 												<td class="text-center">
 													<a class="btn btn-link text-dark px-3 mb-0"
-														th:href="@{/Obra/ActualizarObra/{idObra}(idObra=${Obra.idObra})}">
+														th:href="@{/Medida/ActualizarMedida/{idMedida}(idMedida=${Medida.idMedida})}">
 														<i class="fas fa-pencil-alt text-dark me-2"
 															aria-hidden="true"></i>Actualizar
 													</a>

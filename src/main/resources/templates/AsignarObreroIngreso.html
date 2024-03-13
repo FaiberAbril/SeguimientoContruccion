@@ -67,7 +67,7 @@
 					<a class="nav-link " th:href="@{/Obrero/indexObrero}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-obrero-48 (1).png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-worker-64.png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">Obreros</span>
 					</a>
@@ -76,7 +76,7 @@
 					<a class="nav-link " th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-obrero-48 (1).png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-tarjeta-de-empleado-48 (3).png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">Tecnico Seguimiento</span>
 					</a>
@@ -85,7 +85,7 @@
 					<a class="nav-link " th:href="@{/Material/indexMaterial}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-mantenimiento-48.png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-mantenimiento-48 (4).png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">Materiales</span>
 					</a>
@@ -112,7 +112,7 @@
 					<a class="nav-link " th:href="@{/AsignarObrero/indexAsignarObrero}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-consultar-el-manual-48.png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-obrero-48 (1).png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">(Obrero)</span>
 					</a>
@@ -122,7 +122,7 @@
 					<a class="nav-link " th:href="@{/AsignarObrero/indexAsignarObrero}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-consultar-el-manual-48.png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-name-tag-48.png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">(Tecnico)</span>
 					</a>
@@ -318,8 +318,8 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idObra">Obra:</label>
-											<select name="select" th:field="*{obras.idObra}">
+											<label for="idObra" class="form-label">Obra:</label>
+											<select class="form-select" name="select" th:field="*{obras.idObra}">
 												<option th:each="obras: ${listaObras}" th:value="${obras.idObra}"
 													th:text="${obras.NombreObra}">
 												</option>
@@ -328,8 +328,8 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idObrero">Obreros:</label>
-											<select name="select" th:field="*{obreros.idObrero}">
+											<label for="idObrero" class="form-label">Obreros:</label>
+											<select class="form-select" name="select" th:field="*{obreros.idObrero}">
 												<option th:each="obreros: ${listaObreros}"
 													th:value="${obreros.idObrero}" th:text="${obreros.Nombre}">
 												</option>

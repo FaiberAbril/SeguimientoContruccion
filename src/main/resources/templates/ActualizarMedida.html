@@ -152,9 +152,9 @@
 					<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 ps-2 me-sm-6 me-5">
 						<li class="breadcrumb-item text-sm"><a class="text-white opacity-5"
 								href="javascript:;">Pages</a></li>
-						<li class="breadcrumb-item text-sm text-white active" aria-current="page">Obrero</li>
+						<li class="breadcrumb-item text-sm text-white active" aria-current="page">Profile</li>
 					</ol>
-					<h6 class="text-white font-weight-bolder ms-2">Obreros</h6>
+					<h6 class="text-white font-weight-bolder ms-2">Profile</h6>
 				</nav>
 				<div class="collapse navbar-collapse me-md-0 me-sm-4 mt-sm-0 mt-2" id="navbar">
 					<div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -286,10 +286,10 @@
 					<div class="col-auto my-auto">
 						<div class="h-100">
 							<h5 class="mb-1">
-								FORMULARIO TECNICO SEGUIMIENTO
+								ACTUALIZAR OBRA
 							</h5>
 							<p class="mb-0 font-weight-bold text-sm">
-								Tecnico
+								Obras
 							</p>
 						</div>
 					</div>
@@ -298,11 +298,9 @@
 		</div>
 
 		<div class="container-fluid py-4">
-			<form th:object="${ObjTecnicoSeguimiento}" th:action="@{/TecnicoSeguimiento/GuardarTecnicoSeguimiento}"
-				method="post">
-
+			<form th:object="${ObjMedidas}" th:action="@{/Medida/ActualizarMedida}" method="post">
 				<div class="row">
-					<div class="col-md-7 mt-4">
+					<div class="col-md-8">
 						<div class="card">
 							<div class="card-body">
 								<div class="row">
@@ -311,112 +309,34 @@
 									</div>
 
 									<div class="col-6 text-end">
-										<a th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}"
-											class="btn btn-primary btn-sm ms-auto">volver
+										<a th:href="@{/Medida/indexMedida}">
+											<button class="btn btn-primary btn-sm ms-auto">volver</button>
 										</a>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-6">
+									<div>
 										<div class="form-group">
-											<label for="NombreTec" class="form-label">Nombre:</label>
-											<input type="text" class="form-control" th:field="*{NombreTec}"
-												id="NombreTec" name="NombreTec" required>
+											<input type="hidden" class="form-control" th:field="*{idMedida}" id="idMedida"
+												name="idMedida" required>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="ApellidoTec" class="form-label">Apellidos:</label>
-											<input type="text" class="form-control" th:field="*{ApellidoTec}"
-												id="ApellidoTec" name="ApellidoTec" required>
+											<label for="Nombre" class="form-label">Nombre:</label>
+											<input type="text" class="form-control" th:field="*{Nombre}"
+												id="Nombre" name="Nombre" required>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="TipoDocu" class="form-label">Tipo_Doc:</label>
-											<select class="form-select" th:field="*{TipoDocu}" id="TipoDocu"
-												name="TipoDocu" required>
-												<option value="DNI">D.N.I</option>
-												<option value="Pasaporte">P.A</option>
-												<option value="Cedula">C.C</option>
-												<option value="Tarjeta_identidad">T.I</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="Documento" class="form-label">Documento:</label>
-											<input type="text" class="form-control" th:field="*{Documento}"
-												id="Documento" name="Documento" required>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<label for="Email" class="form-label">Email: </label>
-											<input type="text" class="form-control" th:field="*{Email}" id="Email"
-												name="Email" required>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="Telefono" class="form-label">Telefono:</label>
-											<input type="text" class="form-control" th:field="*{Telefono}" id="Telefono"
-												name="Telefono" required>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="TipoSang" class="form-label">Tipo_San:</label>
-											<select class="form-select" th:field="*{TipoSang}" id="TipoSang"
-												name="TipoSang" required>
-												<option value="A_POSITIVO">A+</option>
-												<option value="A_NEGATIVO">A-</option>
-												<option value="B_POSITIVO">B+</option>
-												<option value="B_NEGATIVO">B-</option>
-												<option value="O_POSITIVO">O+</option>
-												<option value="O_NEGATIVO">O-</option>
-												<option value="AB_POSITIVO">AB+</option>
-												<option value="AB_NEGATIVO">AB-</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="Fecha_nac" class="form-label">Nacimiento</label>
-											<input type="date" class="form-control" th:field="*{Fecha_nac}"
-												id="Fecha_nac" name="Fecha_nac" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="Direccion" class="form-label">Direccion</label>
-											<input type="text" class="form-control" th:field="*{Direccion}"
-												id="Direccion" name="Direccion" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="calificacion" class="form-label">Calificacion:</label>
-											<select class="form-select" th:field="*{calificacion}" id="calificacion"
-												name="calificacion" required>
-												<option value="bueno">Bueno</option>
-												<option value="regular">Regular</option>
-												<option value="malo">Malo</option>
-											</select>
-										</div>
-									</div>
+									
 									<div class="col-md-12 d-flex justify-content-center mt-4">
-										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
+										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Actualizar</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 			</form>
-			<div class="col-md-5 mt-4">
-				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif"
-					style="height: 100%; width: 100%; border-radius: 40px 40px;">
-			</div>
 			<footer class="footer pt-3  ">
 				<div class="container-fluid">
 					<div class="row align-items-center justify-content-lg-between">
@@ -560,8 +480,6 @@
 	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 	<script th:src="@{/js/argon-dashboard.min.js?v=2.0.4}"></script>
 	<!-- Agrega este script al final de tu archivo HTML justo antes del cierre del cuerpo </body> -->
-
-
 </body>
 
 </html>

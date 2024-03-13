@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -286,7 +287,7 @@
 					<div class="col-auto my-auto">
 						<div class="h-100">
 							<h5 class="mb-1">
-								FORMULARIO TECNICO SEGUIMIENTO
+								ACTUALIZAR ASIGNACION
 							</h5>
 							<p class="mb-0 font-weight-bold text-sm">
 								Tecnico
@@ -298,121 +299,36 @@
 		</div>
 
 		<div class="container-fluid py-4">
-			<form th:object="${ObjTecnicoSeguimiento}" th:action="@{/TecnicoSeguimiento/GuardarTecnicoSeguimiento}"
+			<form th:object="${objAsignarTecnico}"
+				th:action="@{/AsignarTecnico/ActualizarAsignarTecnico/{id}(id=${objAsignarTecnico.idAsignarTecnico})}"
 				method="post">
-
-				<div class="row">
-					<div class="col-md-7 mt-4">
-						<div class="card">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-6 d-flex align-items-center">
-										<p class="text-uppercase text-sm">DATOS</p>
-									</div>
-
-									<div class="col-6 text-end">
-										<a th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}"
-											class="btn btn-primary btn-sm ms-auto">volver
-										</a>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="NombreTec" class="form-label">Nombre:</label>
-											<input type="text" class="form-control" th:field="*{NombreTec}"
-												id="NombreTec" name="NombreTec" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="ApellidoTec" class="form-label">Apellidos:</label>
-											<input type="text" class="form-control" th:field="*{ApellidoTec}"
-												id="ApellidoTec" name="ApellidoTec" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="TipoDocu" class="form-label">Tipo_Doc:</label>
-											<select class="form-select" th:field="*{TipoDocu}" id="TipoDocu"
-												name="TipoDocu" required>
-												<option value="DNI">D.N.I</option>
-												<option value="Pasaporte">P.A</option>
-												<option value="Cedula">C.C</option>
-												<option value="Tarjeta_identidad">T.I</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="Documento" class="form-label">Documento:</label>
-											<input type="text" class="form-control" th:field="*{Documento}"
-												id="Documento" name="Documento" required>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<label for="Email" class="form-label">Email: </label>
-											<input type="text" class="form-control" th:field="*{Email}" id="Email"
-												name="Email" required>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="Telefono" class="form-label">Telefono:</label>
-											<input type="text" class="form-control" th:field="*{Telefono}" id="Telefono"
-												name="Telefono" required>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="TipoSang" class="form-label">Tipo_San:</label>
-											<select class="form-select" th:field="*{TipoSang}" id="TipoSang"
-												name="TipoSang" required>
-												<option value="A_POSITIVO">A+</option>
-												<option value="A_NEGATIVO">A-</option>
-												<option value="B_POSITIVO">B+</option>
-												<option value="B_NEGATIVO">B-</option>
-												<option value="O_POSITIVO">O+</option>
-												<option value="O_NEGATIVO">O-</option>
-												<option value="AB_POSITIVO">AB+</option>
-												<option value="AB_NEGATIVO">AB-</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="Fecha_nac" class="form-label">Nacimiento</label>
-											<input type="date" class="form-control" th:field="*{Fecha_nac}"
-												id="Fecha_nac" name="Fecha_nac" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="Direccion" class="form-label">Direccion</label>
-											<input type="text" class="form-control" th:field="*{Direccion}"
-												id="Direccion" name="Direccion" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="calificacion" class="form-label">Calificacion:</label>
-											<select class="form-select" th:field="*{calificacion}" id="calificacion"
-												name="calificacion" required>
-												<option value="bueno">Bueno</option>
-												<option value="regular">Regular</option>
-												<option value="malo">Malo</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-12 d-flex justify-content-center mt-4">
-										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="form-group">
+					<label for="id">ID:</label>
+					<input type="text" id="id" name="id" class="form-control"
+						th:value="${objAsignarTecnico.idAsignarTecnico}" readonly="readonly" />
+				</div>
+				<div class="form-group">
+					<label for="obras">Obra:</label>
+					<select id="obras" name="obras" class="form-control">
+						<option th:each="obras : ${listaObras}" th:value="${obras.idObra}"
+							th:selected="${obras.idObra == objAsignarTecnico.obras.idObra}"
+							th:text="${obras.NombreObra}">
+						</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="TecnicoSeguimiento">TecnicoSeguimiento:</label>
+					<select id="TecnicoSeguimiento" name="TecnicoSeguimiento" class="form-control">
+						<option th:each="TecnicoSeguimiento : ${listaTecnicoSeguimiento}" th:value="${TecnicoSeguimiento.idTecnicoSeguimiento}"
+							th:selected="${TecnicoSeguimiento.idTecnicoSeguimiento == objAsignarTecnico.TecnicoSeguimiento.idTecnicoSeguimiento}"
+							th:text="${TecnicoSeguimiento.NombreTec}"></option>
+					</select>
+				</div>
+				<div class="col-md-12 d-flex justify-content-center mt-4">
+					<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Actualizar</button>
+				</div>
 			</form>
+
 			<div class="col-md-5 mt-4">
 				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif"
 					style="height: 100%; width: 100%; border-radius: 40px 40px;">
