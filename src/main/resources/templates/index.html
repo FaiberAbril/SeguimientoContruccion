@@ -75,7 +75,8 @@
 					<a class="nav-link " th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-tarjeta-de-empleado-48 (3).png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-tarjeta-de-empleado-48 (3).png}"
+								style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">Tecnico</span>
 					</a>
@@ -90,43 +91,14 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " th:href="@{/Material/indexMaterial}">
+					<a class="nav-link " th:href="@{/Seguimiento/indexSeguimiento}">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-mantenimiento-48 (4).png}" style="height: 25px; width: 25px;">
+							<img th:src="@{/img/icons8-advance-48 (1).png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">Seguimiento</span>
 					</a>
 				</li>
-				<br>
-				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Unidad de medida
-					</h6>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " th:href="@{/Medida/indexMedida}">
-						<div
-							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-consultar-el-manual-48.png}" style="height: 25px; width: 25px;">
-						</div>
-						<span class="nav-link-text ms-1">Medida</span>
-					</a>
-				</li>
-				<br>
-				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Diccionario de palabras
-					</h6>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " th:href="@{/Diccionario/indexDiccionario}">
-						<div
-							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<img th:src="@{/img/icons8-consultar-el-manual-48.png}" style="height: 25px; width: 25px;">
-						</div>
-						<span class="nav-link-text ms-1">Diccionario</span>
-					</a>
-				</li>
-				<br>
 				<li class="nav-item mt-3">
 					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">ASIGNACION</h6>
 				</li>
@@ -147,6 +119,34 @@
 							<img th:src="@{/img/icons8-name-tag-48.png}" style="height: 25px; width: 25px;">
 						</div>
 						<span class="nav-link-text ms-1">(Tecnico)</span>
+					</a>
+				</li>
+				<br>
+				<li class="nav-item mt-3">
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Unidad de medida
+					</h6>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " th:href="@{/Medida/indexMedida}">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<img th:src="@{/img/icons8-balanza-48.png}" style="height: 25px; width: 25px;">
+						</div>
+						<span class="nav-link-text ms-1">Medida</span>
+					</a>
+				</li>
+				<br>
+				<li class="nav-item mt-3">
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Diccionario de palabras
+					</h6>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " th:href="@{/Diccionario/indexDiccionario}">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<img th:src="@{/img/icons8-consultar-el-manual-48.png}" style="height: 25px; width: 25px;">
+						</div>
+						<span class="nav-link-text ms-1">Diccionario</span>
 					</a>
 				</li>
 				<br>
@@ -289,258 +289,289 @@
 
 		</nav>
 		<!-- End Navbar -->
-		<div class="container-fluid py-4">
+		<div class="container-fluid py-4 pb-0">
 			<div class="row">
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/Obra/indexObra}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">OBRAS</p>
+				<div class="row col-2">
+					<div class="col-xl-12 col-sm-8 col-md-6 col-lg-4 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Obra/indexObra}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">OBRAS
+												</p>
+											</div>
 										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-											class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-											<img th:src="@{/img/icons8-construcción-64 (1).png}"
-												class="gittext-lg opacity-10"
-												style="height: 25px; width: 25px; margin-top: 10px;">
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+												<img th:src="@{/img/icons8-construcción-64 (1).png}"
+													class="gittext-lg opacity-10"
+													style="height: 25px; width: 25px; margin-top: 10px;">
+											</div>
 										</div>
-
 									</div>
 								</div>
 							</div>
-						</div>
-					</a>
+						</a>
+					</div>
 				</div>
 				<br>
-				<div class="col-xl-3 col-sm-6">
-					<a class="nav-link " th:href="@{/Obrero/indexObrero}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">OBREROS</p>
-										</div>
-
-									</div>
-									<div class="col-4 text-end">
-										<div
-											class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-											<img th:src="@{/img/icons8-worker-64 (1).png}"
-												style="height: 25px; width: 25px; margin-top: 10px;" class="gittext-lg
-												opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<br>
-				<div class="col-xl-3 col-sm-6">
-					<a class="nav-link " th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">TECNICO</p>
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">SEGUIMIENTO</p>
-										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-										class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
-											<img th:src="@{/img/icons8-tarjeta-de-empleado-48 (1).png}"
-												style="height: 25px; width: 25px; margin-top: 10px;" class="gittext-lg
-												opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<br>
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/Material/indexMaterial}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">MATERIALES</p>
-										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-										class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-											<img th:src="@{/img/icons8-tools-48.png}"
-												style="height: 25px; width: 25px; margin-top: 10px;"
-												class="gittext-lg opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/Material/indexMaterial}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">SEGUIMIENTO</p>
-										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-										class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-											<img th:src="@{/img/icons8-tools-48.png}"
-												style="height: 25px; width: 25px; margin-top: 10px;"
-												class="gittext-lg opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<br>
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/Diccionario/indexDiccionario}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">DICCIONARIO</p>
-										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-											class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-											<img th:src="@{/img/icons8-consultar-el-manual-48 (2).png}"
-												style="height: 25px; width: 25px; margin-top: 10px;"
-												class="gittext-lg opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<br>
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/AsignarObrero/indexAsignarObrero}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">ASIGNACION</p>
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">(Obrero)</p>
-										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-										class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-											<img th:src="@{/img/icons8-construction-worker-48.png}"
-												style="height: 25px; width: 25px; margin-top: 10px;"
-												class="gittext-lg opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<br>
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/Asignar/indexAsignarObrero}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">ASIGNACION</p>
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">(Tecnico)</p>
-										</div>
-									</div>
-									<div class="col-4 text-end">
-										<div
-											class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
-											<img th:src="@{/img/icons8-tools-48.png}"
-												style="height: 25px; width: 25px; margin-top: 10px;"
-												class="gittext-lg opacity-10">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<br>
-				<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-					<a class="nav-link " th:href="@{/Perfiles/indexPerfiles}">
-						<div class="card mt-3">
-							<div class="card-body p-3">
-								<div class="row">
-									<div class="col-8">
-										<div class="numbers">
-											<p class="text-sm mb-0 text-uppercase font-weight-bolder">PERFILES</p>
+				<div class="row col-10">
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Obrero/indexObrero}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													OBREROS
+												</p>
+											</div>
 
 										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+												<img th:src="@{/img/icons8-worker-64 (1).png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
 									</div>
-									<div class="col-4 text-end">
-										<div
+								</div>
+							</div>
+						</a>
+					</div>
+					<br>
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/TecnicoSeguimiento/indexTecnicoSeguimiento}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													TECNICO
+												</p>
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													SEGUIMIENTO</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
+												<img th:src="@{/img/icons8-tarjeta-de-empleado-48 (1).png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<br>
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Material/indexMaterial}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													MATERIALES
+												</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+												<img th:src="@{/img/icons8-tools-48.png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<br>
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Material/indexMaterial}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													SEGUIMIENTO</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+												<img th:src="@{/img/icons8-advance-48.png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="row col-2">
+					<div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Medida/indexMedida}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													MEDIDA</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+												<img th:src="@{/img/icons8-balanza-48 (1).png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="row col-10">
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/AsignarObrero/indexAsignarObrero}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													ASIGNACION
+												</p>
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													(Obrero)
+												</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+												<img th:src="@{/img/icons8-construction-worker-48.png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Asignar/indexAsignarObrero}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													ASIGNACION
+												</p>
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													(Tecnico)
+												</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
+												<img th:src="@{/img/icons8-tools-48.png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Diccionario/indexDiccionario}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													DICCIONARIO</p>
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
 											class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-											<img th:src="@{/img/icons8-grupo-de-usuario-48 (3).png}"
-												style="height: 25px; width: 25px; margin-top: 10px;" class="gittext-lg
-												opacity-10">
+												<img th:src="@{/img/icons8-consultar-el-manual-48 (2).png}"
+													style="height: 25px; width: 25px; margin-top: 10px;"
+													class="gittext-lg opacity-10">
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</a>
+						</a>
+					</div>
+					<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+						<a class="nav-link " th:href="@{/Perfiles/indexPerfiles}">
+							<div class="card mt-3">
+								<div class="card-body p-3">
+									<div class="row">
+										<div class="col-8">
+											<div class="numbers">
+												<p class="text-sm mb-0 text-uppercase font-weight-bolder">
+													PERFILES
+												</p>
+
+											</div>
+										</div>
+										<div class="col-4 text-end">
+											<div
+												class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+												<img th:src="@{/img/icons8-grupo-de-usuario-48 (3).png}"
+													style="height: 25px; width: 25px; margin-top: 10px;" class="gittext-lg
+												opacity-10">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+
 				</div>
 			</div>
 		</div>
-		<br>
-		<div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-			<a class="nav-link " th:href="@{/Medida/indexMedida}">
-				<div class="card mt-3">
-					<div class="card-body p-3">
-						<div class="row">
-							<div class="col-8">
-								<div class="numbers">
-									<p class="text-sm mb-0 text-uppercase font-weight-bolder">MEDIDA</p>
-								</div>
-							</div>
-							<div class="col-4 text-end">
-								<div
-								class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-									<img th:src="@{/img/icons8-tools-48.png}"
-										style="height: 25px; width: 25px; margin-top: 10px;"
-										class="gittext-lg opacity-10">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</a>
+		</div>
+		</div>
+		</div>
+		</div>
 		</div>
 		<br>
-		<div class="row mt-4 mx-3">
+		<div class="row mt-3 mx-3">
 			<div class="col-lg-7 mb-lg-0 mb-4">
 				<div class="card z-index-2 h-100">
 					<div class="card-header pb-0 pt-3 bg-transparent">
@@ -568,7 +599,9 @@
 										<i class="ni ni-camera-compact text-dark opacity-10"></i>
 									</div>
 									<h5 class="text-white mb-1">Get started with Argon</h5>
-									<p>There’s nothing I really wanted to do in life that I wasn’t able to get good
+									<p>There’s nothing I really wanted to do in life that I wasn’t able to
+										get
+										good
 										at.</p>
 								</div>
 							</div>
@@ -579,7 +612,9 @@
 										<i class="ni ni-bulb-61 text-dark opacity-10"></i>
 									</div>
 									<h5 class="text-white mb-1">Faster way to create web pages</h5>
-									<p>That’s my skill. I’m not really specifically talented at anything except for
+									<p>That’s my skill. I’m not really specifically talented at anything
+										except
+										for
 										the ability to learn.</p>
 								</div>
 							</div>
@@ -609,7 +644,7 @@
 				</div>
 			</div>
 		</div>
-<br>
+		<br>
 		<footer class="footer pt-3  ">
 			<div class="container-fluid">
 				<div class="row align-items-center justify-content-lg-between">
