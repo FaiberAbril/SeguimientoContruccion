@@ -26922,14 +26922,14 @@ pre[class*="language-"] {
 /* MS supports */
 @supports (-ms-overflow-style: none) {
   .ps {
-    overflow: auto !important;
+    overflow: hidden !important;
   }
 }
 
 @media screen and (-ms-high-contrast: active),
 (-ms-high-contrast: none) {
   .ps {
-    overflow: auto !important;
+    overflow: hidden !important;
   }
 }
 
