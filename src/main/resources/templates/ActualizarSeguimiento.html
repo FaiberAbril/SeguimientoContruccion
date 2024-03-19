@@ -310,10 +310,10 @@
 					<div class="col-auto my-auto">
 						<div class="h-100">
 							<h5 class="mb-1">
-								FORMULARIO OBRA
+								FORMULARIO SEGUIMIENTO
 							</h5>
 							<p class="mb-0 font-weight-bold text-sm">
-								Obras
+								Seguimiento
 							</p>
 						</div>
 					</div>
@@ -334,7 +334,8 @@
 									</div>
 
 									<div class="col-6 text-end">
-										<a th:href="@{/Seguimiento/indexSeguimiento}" class="btn btn-primary btn-sm ms-auto">volver
+										<a th:href="@{/Seguimiento/indexSeguimiento}"
+											class="btn btn-primary btn-sm ms-auto">volver
 										</a>
 									</div>
 								</div>
@@ -342,45 +343,60 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="valor" class="form-label">valor:</label>
-											<input type="number" class="form-control" th:field="*{valor}"
-												id="valor" name="valor" required>
+											<input type="number" class="form-control" th:field="*{valor}" id="valor"
+												name="valor" step="any" required>
 										</div>
 									</div>
-
-                                    <div class="col-md-6">
+									<div class="col-md-6">
 										<div class="form-group">
 											<label for="idMedida" class="form-label">Medida:</label>
-											<select class="form-select" name="select" th:field="*{Medidas.idMedida}">
-												<option th:each="Medidas: ${listaMedidas}" th:value="${Medidas.idMedida}"
-													th:text="${Medidas.Nombre}">
+											<select class="form-select" name="select" th:field="*{medida.idMedida}">
+												<option th:each="medida: ${listaMedidas}" th:value="${medida.idMedida}"
+													th:text="${medida.Nombre}">
 												</option>
 											</select>
 										</div>
 									</div>
-                                    <div class="col-md-6">
+									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idDiccionario" class="form-label">Diccionario:</label>
-											<select class="form-select" name="select" th:field="*{Diccionario.idDiccionario}">
-												<option th:each="Diccionario: ${listaDiccionario}" th:value="${Diccionario.idDiccionario}"
-													th:text="${Diccionario.palabra}">
+											<label for="idTecnicoSeguimiento" class="form-label">Tecnico:</label>
+											<select class="form-select" name="select"
+												th:field="*{tecnicoSeguimiento.idTecnicoSeguimiento}">
+												<option th:each="tecnicoSeguimiento: ${listaTecnicoSeguimiento}"
+													th:value="${tecnicoSeguimiento.idTecnicoSeguimiento}"
+													th:text="${tecnicoSeguimiento.NombreTec}">
 												</option>
 											</select>
 										</div>
 									</div>
-                                    <div class="col-md-6">
+									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idDiccionario" class="form-label">Diccionario:</label>
-											<select class="form-select" name="select" th:field="*{Diccionario.idDiccionario}">
-												<option th:each="Diccionario: ${listaDiccionario}" th:value="${Diccionario.idDiccionario}"
-													th:text="${Diccionario.significado}">
+											<label for="idDiccionario" class="form-label">Palabra:</label>
+											<select class="form-select" name="select"
+												th:field="*{diccionario.idDiccionario}">
+												<option th:each="diccionario: ${listaDiccionario}"
+													th:value="${diccionario.idDiccionario}"
+													th:text="${diccionario.palabra}">
 												</option>
 											</select>
 										</div>
 									</div>
-                                    
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="idDiccionario" class="form-label">Significado:</label>
+											<select class="form-select" name="select"
+												th:field="*{diccionario.idDiccionario}">
+												<option th:each="diccionario: ${listaDiccionario}"
+													th:value="${diccionario.idDiccionario}"
+													th:text="${diccionario.significado}">
+												</option>
+											</select>
+										</div>
+									</div>
 
 									<div class="col-md-12 d-flex justify-content-center mt-4">
-										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Actualizar</button>
+										<button class="btn btn-sm btn-info mb-0 d-block"
+											type="submit">Actualizar</button>
 									</div>
 								</div>
 							</div>

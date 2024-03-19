@@ -2672,7 +2672,7 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
-
+  
 @media (max-width: 1199.98px) {
   .table-responsive-xl {
     overflow-x: auto;

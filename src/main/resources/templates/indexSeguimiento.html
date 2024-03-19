@@ -318,6 +318,9 @@
 													Medida</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Tecnico</th>
+												<th
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													palabra</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
@@ -334,14 +337,16 @@
 											<tr th:each="Seguimiento : ${listaSeguimiento}">
 												<td th:text="${Seguimiento.idSeguimiento}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.Medida.Nombre}"
+												<td th:text="${Seguimiento.valor}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.Medida.Nombre}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Seguimiento.tecnicoSeguimiento.NombreTec}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.Diccionario.palabra}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.Diccionario.significado}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
+													class=" text-center text-uppercase text-dark text-xs col-4"></td>
 												<td class="text-center">
 													<a th:href="@{/Seguimiento/EliminarSeguimiento/{idSeguimiento}(idSeguimiento=${Seguimiento.idSeguimiento})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
@@ -363,17 +368,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="card-body pt-4 p-3">
-					<ul class="list-group">
-						<li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-							<div class="d-flex flex-column col-8">
-								<h6 class="mb-3 text-sm">Ladrillo</h6>
-								<span class="mb-2 text-xs">Significado: material fundamental en la construcción debido a su durabilidad, resistencia y facilidad de uso. Se fabrican generalmente a partir de arcilla moldeada y luego se cuecen en un horno para endurecerlos. Sin embargo, también existen ladrillos de concreto, piedra y otros materiales.</span>
-							</div>
-							
-						</li>
-					</ul>
 				</div>
 				<footer class="footer pt-3  ">
 					<div class="container-fluid">

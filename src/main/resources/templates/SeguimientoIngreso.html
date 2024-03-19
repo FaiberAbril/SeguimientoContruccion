@@ -344,7 +344,7 @@
 										<div class="form-group">
 											<label for="valor" class="form-label">valor:</label>
 											<input type="number" class="form-control" th:field="*{valor}" id="valor"
-												name="valor" required>
+												name="valor" step="any" required>
 										</div>
 									</div>
 
@@ -352,15 +352,25 @@
 										<div class="form-group">
 											<label for="idMedida" class="form-label">Medida:</label>
 											<select class="form-select" name="select" th:field="*{medida.idMedida}">
-												<option th:each="medida: ${listaMedidas}"
-													th:value="${medida.idMedida}" th:text="${medida.Nombre}">
+												<option th:each="medida: ${listaMedidas}" th:value="${medida.idMedida}"
+													th:text="${medida.Nombre}">
 												</option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idDiccionario" class="form-label">Diccionario:</label>
+											<label for="idTecnicoSeguimiento" class="form-label">Tecnico:</label>
+											<select class="form-select" name="select" th:field="*{tecnicoSeguimiento.idTecnicoSeguimiento}">
+												<option th:each="tecnicoSeguimiento: ${listaTecnicoSeguimiento}" th:value="${tecnicoSeguimiento.idTecnicoSeguimiento}"
+													th:text="${tecnicoSeguimiento.NombreTec}">
+												</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="idDiccionario" class="form-label">Palabra:</label>
 											<select class="form-select" name="select"
 												th:field="*{diccionario.idDiccionario}">
 												<option th:each="diccionario: ${listaDiccionario}"
@@ -372,7 +382,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idDiccionario" class="form-label">Diccionario:</label>
+											<label for="idDiccionario" class="form-label">Significado:</label>
 											<select class="form-select" name="select"
 												th:field="*{diccionario.idDiccionario}">
 												<option th:each="diccionario: ${listaDiccionario}"
