@@ -342,7 +342,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="valor" class="form-label">valor:</label>
+											<label for="valor" class="form-label">Valor:</label>
 											<input type="number" class="form-control" th:field="*{valor}" id="valor"
 												name="valor" step="any" required>
 										</div>
@@ -355,6 +355,15 @@
 													th:text="${medida.Nombre}">
 												</option>
 											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="hora" class="form-label">Hora:</label>
+											<input type="text" class="form-control" th:field="*{hora}" id="hora"
+												name="hora"
+												th:value="${#dates.format(#dates.createNow(), 'dd/MM/yyyy HH:mm:ss')}"
+												disabled>
 										</div>
 									</div>
 									<div class="col-md-6">

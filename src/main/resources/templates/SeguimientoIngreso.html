@@ -342,12 +342,11 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="valor" class="form-label">valor:</label>
+											<label for="valor" class="form-label">Valor:</label>
 											<input type="number" class="form-control" th:field="*{valor}" id="valor"
 												name="valor" step="any" required>
 										</div>
 									</div>
-
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="idMedida" class="form-label">Medida:</label>
@@ -361,8 +360,10 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="idTecnicoSeguimiento" class="form-label">Tecnico:</label>
-											<select class="form-select" name="select" th:field="*{tecnicoSeguimiento.idTecnicoSeguimiento}">
-												<option th:each="tecnicoSeguimiento: ${listaTecnicoSeguimiento}" th:value="${tecnicoSeguimiento.idTecnicoSeguimiento}"
+											<select class="form-select" name="select"
+												th:field="*{tecnicoSeguimiento.idTecnicoSeguimiento}">
+												<option th:each="tecnicoSeguimiento: ${listaTecnicoSeguimiento}"
+													th:value="${tecnicoSeguimiento.idTecnicoSeguimiento}"
 													th:text="${tecnicoSeguimiento.NombreTec}">
 												</option>
 											</select>
@@ -370,30 +371,19 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idDiccionario" class="form-label">Palabra:</label>
-											<select class="form-select" name="select"
-												th:field="*{diccionario.idDiccionario}">
-												<option th:each="diccionario: ${listaDiccionario}"
-													th:value="${diccionario.idDiccionario}"
-													th:text="${diccionario.palabra}">
-												</option>
+											<label for="palabra" class="form-label">Palabra:</label>
+											<select id="palabra" class="form-select" name="select" onchange="obtenerSignificado()">
+												<option value="">Seleccione una palabra...</option>
+												<option th:each="diccionario: ${listaDiccionario}" th:value="${diccionario.palabra}" th:text="${diccionario.palabra}"></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="idDiccionario" class="form-label">Significado:</label>
-											<select class="form-select" name="select"
-												th:field="*{diccionario.idDiccionario}">
-												<option th:each="diccionario: ${listaDiccionario}"
-													th:value="${diccionario.idDiccionario}"
-													th:text="${diccionario.significado}">
-												</option>
-											</select>
+											<label for="significado" class="form-label">Significado:</label>
+											<input type="text" id="significado" class="form-control" name="significado" readonly>
 										</div>
 									</div>
-
-
 									<div class="col-md-12 d-flex justify-content-center mt-4">
 										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
 									</div>
@@ -402,7 +392,7 @@
 						</div>
 					</div>
 			</form>
-			<div class="col-md-5 mt-4">
+           <div class="col-md-5 mt-4">
 				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif"
 					style="height: 100%; width: 100%; border-radius: 40px 40px;">
 			</div>
@@ -549,7 +539,28 @@
 	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 	<script th:src="@{/js/argon-dashboard.min.js?v=2.0.4}"></script>
 	<!-- Agrega este script al final de tu archivo HTML justo antes del cierre del cuerpo </body> -->
-
+	<!--Funcinalidad de traer significado por palabra-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:inline="javascript">
+		function obtenerSignificado() {
+			var palabraSeleccionada = document.getElementById("palabra").value;
+			if (palabraSeleccionada) {
+				$.ajax({
+					type: "GET",
+					url: "/Seguimiento/obtenerSignificado",
+					data: { palabra: palabraSeleccionada },
+					success: function(response) {
+						document.getElementById("significado").value = response;
+					},
+					error: function(xhr, status, error) {
+						console.error("Error al obtener el significado de la palabra:", error);
+					}
+				});
+			} else {
+				document.getElementById("significado").value = "";
+			}
+		}
+	</script>
 </body>
 
 </html>

@@ -318,6 +318,12 @@
 													Medida</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Fecha</th>
+												<th
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Hora</th>
+												<th
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Tecnico</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
@@ -338,15 +344,19 @@
 												<td th:text="${Seguimiento.idSeguimiento}"
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.valor}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.Medida.Nombre}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Seguimiento.medida.Nombre}"
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Seguimiento.hora}"
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Seguimiento.fecha}"
+													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.tecnicoSeguimiento.NombreTec}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.Diccionario.palabra}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.Diccionario.significado}"
-													class=" text-center text-uppercase text-dark text-xs col-4"></td>
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<!--<td th:text="${Seguimiento.diccionario.palabra}"
+													class="text-center text-uppercase text-dark text-xs"></td>
+												<td th:text="${Seguimiento.diccionario.significado}"
+													class="text-center text-uppercase text-dark text-xs"></td>-->
 												<td class="text-center">
 													<a th:href="@{/Seguimiento/EliminarSeguimiento/{idSeguimiento}(idSeguimiento=${Seguimiento.idSeguimiento})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
@@ -363,6 +373,7 @@
 												</td>
 											</tr>
 										</tbody>
+
 									</table>
 								</div>
 							</div>
@@ -505,6 +516,7 @@
 	<script th:src="@{/js/core/bootstrap.min.js}"></script>
 	<script th:src="@{/js/plugins/perfect-scrollbar.min.js}"></script>
 	<script th:src="@{/js/plugins/smooth-scrollbar.min.js}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		var win = navigator.platform.indexOf('Win') > -1;
 		if (win && document.querySelector('#sidenav-scrollbar')) {

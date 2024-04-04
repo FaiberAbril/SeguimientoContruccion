@@ -25,9 +25,10 @@
 			window.location.href = "http://localhost:8080/PaginaInicio/Inicio";
 		}
 	</script>
-	<style>body {
-		overflow: hidden;
-	}
+	<style>
+		body {
+			overflow: hidden;
+		}
 	</style>
 </head>
 
@@ -360,6 +361,13 @@
 												style="height: auto; overflow: hidden;"></textarea>
 										</div>
 									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="Direccion" class="form-label">Direccion:</label>
+											<input type="text" class="form-control" th:field="*{Direccion}"
+												id="Direccion" name="Direccion" required>
+										</div>
+									</div>
 
 									<div class="col-md-6">
 										<div class="form-group">
@@ -527,7 +535,7 @@
 	<script th:src="@{/js/core/bootstrap.min.js}"></script>
 	<script th:src="@{/js/plugins/perfect-scrollbar.min.js}"></script>
 	<script th:src="@{/js/plugins/smooth-scrollbar.min.js}"></script>
-	
+
 	<!-- Github buttons -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
