@@ -360,6 +360,7 @@
 											<label for="categoria" class="form-label">Categoría:</label>
 											<select id="categoria" name="categoria" th:field="*{categoria}"
 												class="form-select">
+												<option value="">Seleccione una Categoría...</option>
 												<option th:each="categoria : ${categorias}" th:value="${categoria}"
 													th:text="${categoria}"></option>
 											</select>

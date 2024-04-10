@@ -345,7 +345,7 @@
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.valor}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.medida.Nombre}"
+												<td th:text="${Seguimiento.medida.Unidad}"
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.hora}"
 													class="text-center text-uppercase text-dark text-xs"></td>
@@ -353,16 +353,16 @@
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.tecnicoSeguimiento.NombreTec}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<!--<td th:text="${Seguimiento.diccionario.palabra}"
+												<td th:text="${Seguimiento.diccionario.palabra}"
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Seguimiento.diccionario.significado}"
-													class="text-center text-uppercase text-dark text-xs"></td>-->
+													class="text-center text-uppercase text-dark text-xs"></td>
 												<td class="text-center">
-													<a th:href="@{/Seguimiento/EliminarSeguimiento/{idSeguimiento}(idSeguimiento=${Seguimiento.idSeguimiento})}"
-														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
-														href="javascript:;">
-														<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
-													</a>
+														<a th:href="@{/Seguimiento/EliminarSeguimiento/{idSeguimiento}(idSeguimiento=${Seguimiento.idSeguimiento})}"
+															class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
+															href="javascript:;">
+															<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
+														</a>
 												</td>
 												<td class="text-center">
 													<a class="btn btn-link text-dark px-3 mb-0"

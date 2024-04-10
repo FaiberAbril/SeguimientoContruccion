@@ -314,6 +314,9 @@
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Nombre</th>
 												<th
+													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+													Unidad</th>
+													<th
 													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Eliminar</th>
 												<th
@@ -327,7 +330,8 @@
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Medida.Nombre}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
-
+													<td th:text="${Medida.Unidad}"
+													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td class="text-center">
 													<a th:href="@{/Medida/EliminarMedida/{idMedida}(idMedida=${Medida.idMedida})}"
 														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"

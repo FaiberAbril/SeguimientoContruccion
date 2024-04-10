@@ -352,7 +352,7 @@
 											<label for="idMedida" class="form-label">Medida:</label>
 											<select class="form-select" name="select" th:field="*{medida.idMedida}">
 												<option th:each="medida: ${listaMedidas}" th:value="${medida.idMedida}"
-													th:text="${medida.Nombre}">
+													th:text="${medida.Unidad}">
 												</option>
 											</select>
 										</div>
