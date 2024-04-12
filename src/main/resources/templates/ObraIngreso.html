@@ -343,63 +343,69 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="NombreObra" class="form-label">Nombre:</label>
-											<input type="text" class="form-control" th:field="*{NombreObra}"
-												id="NombreObra" name="NombreObra" required>
-										</div>
-									</div>
 
-									<div class="col-6">
+									<div>
 										<div class="form-group">
-											<label for="Descripcion" class="form-label">Descripcion:</label>
-											<textarea class="form-control auto-resize" id="Descripcion"
-												name="Descripcion" required="" oninput="autoResize(this)"
-												onfocus="focused(this)" onblur="defocused(this)"
-												onfocusout="defocused(this)"
-												style="height: auto; overflow: hidden;"></textarea>
+											<input type="hidden" class="form-control" th:field="*{idObra}" id="idObra"
+												name="idObra" required>
 										</div>
-									</div>
+									</div> 
 									<div class="col-md-6">
-										<div class="form-group">
-											<label for="FechaInicio" class="form-label">Fecha_Inicio</label>
-											<input type="date" class="form-control" th:field="*{FechaInicio}"
-												id="FechaInicio" name="FechaInicio" required>
-										</div>
+									<div class="form-group">
+										<label for="NombreObra" class="form-label">Nombre:</label>
+										<input type="text" class="form-control" th:field="*{NombreObra}" id="NombreObra"
+											name="NombreObra" required>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="FechaFinal" class="form-label">Fecha_Final</label>
-											<input type="date" class="form-control" th:field="*{FechaFinal}"
-												id="FechaFinal" name="FechaFinal" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="Direccion" class="form-label">Direccion:</label>
-											<input type="text" class="form-control" th:field="*{Direccion}"
-												id="Direccion" name="Direccion" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="estado" class="form-label">Estado:</label>
-											<select class="form-select" th:field="*{estado}" id="estado" name="estado"
-												required>
-												<option value="En_progreso">En_progreso</option>
-												<option value="Completado">Completado</option>
-											</select>
-										</div>
-									</div>
+								</div>
 
-									<div class="col-md-12 d-flex justify-content-center mt-4">
-										<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
+								<div class="col-6">
+									<div class="form-group">
+										<label for="Descripcion" class="form-label">Descripcion:</label>
+										<textarea class="form-control auto-resize" id="Descripcion" name="Descripcion"
+											required="" oninput="autoResize(this)" onfocus="focused(this)"
+											onblur="defocused(this)" onfocusout="defocused(this)"
+											style="height: auto; overflow: hidden;"></textarea>
 									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="FechaInicio" class="form-label">Fecha_Inicio</label>
+										<input type="date" class="form-control" th:field="*{FechaInicio}"
+											id="FechaInicio" name="FechaInicio" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="FechaFinal" class="form-label">Fecha_Final</label>
+										<input type="date" class="form-control" th:field="*{FechaFinal}" id="FechaFinal"
+											name="FechaFinal" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="Direccion" class="form-label">Direccion:</label>
+										<input type="text" class="form-control" th:field="*{Direccion}" id="Direccion"
+											name="Direccion" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="estado" class="form-label">Estado:</label>
+										<select class="form-select" th:field="*{estado}" id="estado" name="estado"
+											required>
+											<option value="En_progreso">En_progreso</option>
+											<option value="Completado">Completado</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-12 d-flex justify-content-center mt-4">
+									<button class="btn btn-sm btn-info mb-0 d-block" type="submit">Guardar</button>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 			</form>
 			<div class="col-md-5 mt-4">
 				<img src="/img/_b5586adc-bd65-4263-9fb8-151778cc1ece.jfif"

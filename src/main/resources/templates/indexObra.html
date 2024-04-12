@@ -307,9 +307,7 @@
 									<table class="table align-items-center mb-0 pl-0">
 										<thead>
 											<tr>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Id</th>
+												
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Nombre</th>
@@ -338,8 +336,6 @@
 										</thead>
 										<tbody>
 											<tr th:each="Obra : ${listaObras}">
-												<td th:text="${Obra.idObra}"
-													class="text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Obra.NombreObra}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${Obra.Descripcion}"

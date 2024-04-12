@@ -309,28 +309,19 @@
 											<tr>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Id</th>
+													Tecnico</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													valor</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Medida</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Fecha</th>
+													Avance</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Hora</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Tecnico</th>
+													Fecha</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													palabra</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Descripcion</th>
+													Tecnica</th>
 												<th
 													class="text-center  text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Eliminar</th>
@@ -340,39 +331,34 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr th:each="Seguimiento : ${listaSeguimiento}">
-												<td th:text="${Seguimiento.idSeguimiento}"
+											<tr th:each="seguimiento : ${listaSeguimiento}">
+												<td th:text="${seguimiento.tecnicoSeguimiento.NombreTec + ' ' + seguimiento.tecnicoSeguimiento.ApellidoTec}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.valor}"
+												<td th:text="${seguimiento.valor + ' ' + seguimiento.medida.Unidad}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.medida.Unidad}"
+												<td th:text="${#dates.format(seguimiento.hora, 'HH:mm')}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.hora}"
+												<td th:text="${#dates.format(seguimiento.fecha, 'dd-MM-yyyy')}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.fecha}"
-													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.tecnicoSeguimiento.NombreTec}"
-													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.diccionario.palabra}"
-													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${Seguimiento.diccionario.significado}"
+												<td th:text="${seguimiento.diccionario.palabra}"
 													class="text-center text-uppercase text-dark text-xs"></td>
 												<td class="text-center">
-														<a th:href="@{/Seguimiento/EliminarSeguimiento/{idSeguimiento}(idSeguimiento=${Seguimiento.idSeguimiento})}"
-															class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
-															href="javascript:;">
-															<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
-														</a>
+													<a th:href="@{/Seguimiento/EliminarSeguimiento/{idSeguimiento}(idSeguimiento=${seguimiento.idSeguimiento})}"
+														class="btn btn-link text-danger text-center text-gradient px-3 mb-0"
+														href="javascript:;">
+														<i class="far fa-trash-alt me-2" aria-hidden="true"></i>Eliminar
+													</a>
 												</td>
 												<td class="text-center">
 													<a class="btn btn-link text-dark px-3 mb-0"
-														th:href="@{/Seguimiento/ActualizarSeguimiento/{idSeguimiento}(idSeguimiento=${Seguimiento.idSeguimiento})}">
+														th:href="@{/Seguimiento/ActualizarSeguimiento/{idSeguimiento}(idSeguimiento=${seguimiento.idSeguimiento})}">
 														<i class="fas fa-pencil-alt text-dark me-2"
 															aria-hidden="true"></i>Actualizar
 													</a>
 												</td>
 											</tr>
 										</tbody>
+
 
 									</table>
 								</div>

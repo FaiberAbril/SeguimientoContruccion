@@ -309,13 +309,7 @@
 											<tr>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Id</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Nombre</th>
-												<th
-													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-													Apellido</th>
+													Nombre Completo</th>
 												<th
 													class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
 													Tipo_Doc</th>
@@ -350,12 +344,8 @@
 										</thead>
 										<tbody>
 											<tr th:each="TecnicoSeguimiento : ${listaTecnicoSeguimiento}">
-												<td th:text="${TecnicoSeguimiento.idTecnicoSeguimiento}"
+												<td th:text="${TecnicoSeguimiento.NombreTec + ' ' + TecnicoSeguimiento.ApellidoTec}"
 													class="text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${TecnicoSeguimiento.NombreTec}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
-												<td th:text="${TecnicoSeguimiento.ApellidoTec}"
-													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${TecnicoSeguimiento.TipoDocu}"
 													class=" text-center text-uppercase text-dark text-xs"></td>
 												<td th:text="${TecnicoSeguimiento.Documento}"
